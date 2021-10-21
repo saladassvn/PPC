@@ -185,22 +185,53 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\adminlte.js" />
     <Content Include="Content\adminlte.min.css" />
     <Content Include="Content\all.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.bundle.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chart.min.js" />
+    <Content Include="Content\dashboard.js" />
     <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\daterangepicker.js" />
+    <Content Include="Content\demo.js" />
     <Content Include="Content\icheck-bootstrap.min.css" />
+    <Content Include="Content\jquery-ui.min.js" />
+    <Content Include="Content\jquery.knob.min.js" />
+    <Content Include="Content\jquery.min.js" />
+    <Content Include="Content\jquery.overlayScrollbars.min.js" />
+    <Content Include="Content\jquery.vmap.min.js" />
+    <Content Include="Content\jquery.vmap.usa.js" />
     <Content Include="Content\jqvmap.min.css" />
+    <Content Include="Content\moment.min.js" />
     <Content Include="Content\OverlayScrollbars.min.css" />
+    <Content Include="Content\sparkline.js" />
     <Content Include="Content\summernote-bs4.css" />
+    <Content Include="Content\summernote-bs4.min.js" />
     <Content Include="Content\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Content\tempusdominus-bootstrap-4.min.js" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fa-brands-400.svg" />
+    <Content Include="fonts\fa-regular-400.svg" />
+    <Content Include="fonts\fa-solid-900.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\avatar5.png" />
+    <Content Include="Images\ppc0001.jpg" />
+    <Content Include="Images\ppc0002.jpg" />
+    <Content Include="Images\ppc0003.jpg" />
+    <Content Include="Images\ppc0004.jpg" />
+    <Content Include="Images\ppc0005.jpg" />
+    <Content Include="Images\ppc0006.jpg" />
+    <Content Include="Images\ppc0007.jpg" />
+    <Content Include="Images\ppc0008.jpg" />
+    <Content Include="Images\ppc0009.jpg" />
+    <Content Include="Images\ppc0010.jpg" />
+    <Content Include="Images\PPCLogo-128-128.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -224,6 +255,18 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
+    <Content Include="fonts\fa-brands-400.eot" />
+    <Content Include="fonts\fa-brands-400.ttf" />
+    <Content Include="fonts\fa-brands-400.woff" />
+    <Content Include="fonts\fa-brands-400.woff2" />
+    <Content Include="fonts\fa-regular-400.eot" />
+    <Content Include="fonts\fa-regular-400.ttf" />
+    <Content Include="fonts\fa-regular-400.woff" />
+    <Content Include="fonts\fa-regular-400.woff2" />
+    <Content Include="fonts\fa-solid-900.eot" />
+    <Content Include="fonts\fa-solid-900.ttf" />
+    <Content Include="fonts\fa-solid-900.woff" />
+    <Content Include="fonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
