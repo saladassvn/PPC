@@ -197,6 +197,7 @@
     <Content Include="Content\dashboard.js" />
     <Content Include="Content\daterangepicker.css" />
     <Content Include="Content\daterangepicker.js" />
+    <Content Include="Content\DatStyle.css" />
     <Content Include="Content\demo.js" />
     <Content Include="Content\icheck-bootstrap.min.css" />
     <Content Include="Content\jquery-ui.min.js" />
