@@ -16,5 +16,11 @@ namespace PPCWebs.Areas.Admin.Controllers
             var property = model.Properties.OrderByDescending(x => x.ID).ToList();
             return View(property);
         }
+
+        public ActionResult Detail()
+        {
+            var property = model.Properties.OrderByDescending(x => x.ID).ToList();
+            return View(property);
+        }
     }
 }
