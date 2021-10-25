@@ -131,6 +131,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AddPropertyController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PropertiesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SearchPropertyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -273,6 +274,11 @@
     <Content Include="Areas\Admin\Views\SearchProperty\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AddProperty\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Properties\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Properties\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Properties\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Properties\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Properties\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

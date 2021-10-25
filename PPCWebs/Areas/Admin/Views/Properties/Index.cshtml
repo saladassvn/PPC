@@ -1,0 +1,102 @@
+﻿@model IEnumerable<PPCWebs.Models.Property>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>List Of Property</h2>
+
+<p>
+    @Html.ActionLink("Add New Property", "Create")
+</p>
+
+<div class="topnav">
+
+    @using (Html.BeginForm("Index", "SearchProperty", FormMethod.Get))
+    {
+        @Html.TextBox("searching", null, new { @placeholder = "Enter Property Name To Search...", @style = "width: 350px !important; border-radius: 4px; margin-right: 10px;" });
+    }
+</div>
+
+<p>
+
+</p>
+<table class="table" style="width:100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BedRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BathRoom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstallmentRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.District.DistrictName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyStatu.PropertyStatusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyType.PropertyTypeName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BedRoom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BathRoom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstallmentRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.District.DistrictName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyStatu.PropertyStatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PropertyType.PropertyTypeName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+</table>

@@ -1,0 +1,109 @@
+﻿@model PPCWebs.Models.Property
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <form style="padding: 0 200px; padding-bottom: 100px;">
+        <h2 style="padding-bottom: 20px;">Add Property</h2>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Name">Name</label>
+                @Html.EditorFor(model => model.PropertyName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Property Type</label>
+                @Html.DropDownList("PropertyTypeID", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Address</label>
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">District</label>
+                @Html.DropDownList("DistrictID", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="Area">Area</label>
+                @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Bed">Bed Room</label>
+                @Html.EditorFor(model => model.BedRoom, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Bath">Bath Room</label>
+                @Html.EditorFor(model => model.BathRoom, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="Price">Price</label>
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Rate">Installment Rate</label>
+                @Html.EditorFor(model => model.InstallmentRate, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Status</label>
+                @Html.DropDownList("PropertyStatusID", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col_01 col_len">
+                <label for="Description">Mô tả</label>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col_01 ">
+                <label class="text_label_01 mt_01">Avatar Property</label>
+                <input type="file" multiple name="image" class="input_img_01" id="ImagePath" required>
+                <div class="image_aria " id="image_aria">
+                    <img width="500" src="" alt="image" class="anh" style="padding: 20px 0;">
+                    <span class="them_image"></span>
+                </div>
+            </div>
+            @*  @Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })*@
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+        const image = document.getElementById("ImagePath");
+        const vunganh = document.getElementById("image_aria");
+        const anh = vunganh.querySelector(".anh");
+        const anhtext = vunganh.querySelector(".them_image");
+        image.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                anhtext.style.display = "none";
+                anh.style.display = "block";
+                reader.addEventListener("load", function () {
+                    anh.setAttribute("src", this.result);
+                });
+                reader.readAsDataURL(file);
+            }
+        });
+</script>
