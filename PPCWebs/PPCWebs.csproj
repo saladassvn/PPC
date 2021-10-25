@@ -129,8 +129,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AddPropertyController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\PropertiesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SearchPropertyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -258,7 +256,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\ProductAdmin\Index.cshtml" />
     <Content Include="fonts\fa-brands-400.eot" />
     <Content Include="fonts\fa-brands-400.ttf" />
     <Content Include="fonts\fa-brands-400.woff" />
@@ -273,7 +270,7 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <Content Include="Areas\Admin\Views\SearchProperty\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AddProperty\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ProductAdmin\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Properties\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Properties\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Properties\Details.cshtml" />
