@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Detail Property";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form style="padding: 0 200px; padding-bottom: 100px;">
+    <h2 style="padding-bottom: 20px;">Detail Property</h2>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="Name" value="Khách Sạn YSK">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Property Type</label>
+            <input type="text" class="form-control" id="inputType" value="Khu nghỉ dưỡng">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" value="13/134 Trần Văn Hoàng , phường 9 ">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">District</label>
+            <input type="text" class="form-control" id="inputDistrict" value="Quận Tân Bình">
+
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="Area">Area</label>
+            <input type="number" class="form-control" id="Area" value="35">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="Bed">Bed Room</label>
+            <input type="number" class="form-control" id="Bed" value="20">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="Bath">Bath Room</label>
+            <input type="number" class="form-control" id="Bath" value="20">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="Price">Price</label>
+            <input type="number" class="form-control" id="Price" value="900000000">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="Rate">Installment Rate</label>
+            <input type="number" class="form-control" id="Rate"value="7.99">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Status</label>
+            <input type="text" class="form-control" id="inputStatus" value="Không hiển thị">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col_01 col_len">
+            <label for="Description">Mô tả</label>
+            <textarea required rows="2" cols="5" id="Description" name="mota" form="add_product" autocomplete="off" class="form-control" >Phòng rất khang trang và sạch sẽ</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col_01 ">
+            <label class="text_label_01 mt_01">Avatar Property</label>
+
+            <div class="image_aria " id="image_aria">
+                <img width="700" src="~/Images/ppc0001.jpg" alt="image" style="padding: 20px 0;">
+
+            </div>
+        </div>
+        <button type="Update" class="btn btn-primary">Update</button>
+
+    </div>
+    
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+

@@ -272,6 +272,7 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <Content Include="Areas\Admin\Views\SearchProperty\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AddProperty\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductAdmin\Detail.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
