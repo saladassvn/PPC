@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PPCWebs.Models;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PPCWebs.Areas.Admin.Controllers
 {
@@ -50,13 +54,45 @@ namespace PPCWebs.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,PropertyCode,PropertyName,PropertyTypeID,Description,DistrictID,Address,Area,BedRoom,BathRoom,Price,InstallmentRate,Avatar,Album,PropertyStatusID")] Property property)
+        public ActionResult Create([Bind(Include = "ID,PropertyCode,PropertyName,PropertyTypeID,Description,DistrictID,Address,Area,BedRoom,BathRoom,Price,InstallmentRate,Avatar,Album,PropertyStatusID")] Property property, HttpPostedFileBase img)
         {
+
             if (ModelState.IsValid)
             {
-                db.Properties.Add(property);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    if (img != null)
+                    {
+                        string fileName = System.IO.Path.GetFileName(img.FileName);
+                        string filePath = "~/Images/" + fileName;
+                        Console.WriteLine(filePath);
+                        img.SaveAs(Server.MapPath(filePath));
+                        db.Properties.Add(new Property
+                        {
+                            PropertyCode = property.PropertyCode,
+                            PropertyName = property.PropertyName,
+                            PropertyTypeID = property.PropertyTypeID,
+                            Description = property.Description,
+                            DistrictID = property.DistrictID,
+                            Address = property.Address,
+                            Area = property.Area,
+                            BedRoom = property.BedRoom,
+                            BathRoom = property.BathRoom,
+                            Price = property.Price,
+                            InstallmentRate = property.InstallmentRate,
+                            PropertyStatusID = property.PropertyStatusID,
+                            Avatar = filePath
+                        }) ;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+
+                    }
+                    ViewBag.FileStatus = "File uploaded successfully.";
+                }
+                catch (Exception)
+                {
+
+                }
             }
 
             ViewBag.DistrictID = new SelectList(db.Districts, "ID", "DistrictName", property.DistrictID);
