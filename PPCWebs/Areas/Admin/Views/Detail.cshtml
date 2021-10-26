@@ -14,52 +14,52 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputEmail4">Property Type</label>
-            <input type="text" class="form-control" id="inputType" value="Khu nghỉ dưỡng">
+            @Html.DisplayFor(model => model.PropertyName, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" value="13/134 Trần Văn Hoàng , phường 9 ">
+            @Html.DisplayFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
         </div>
         <div class="form-group col-md-6">
             <label for="inputEmail4">District</label>
-            <input type="text" class="form-control" id="inputDistrict" value="Quận Tân Bình">
+            @Html.DisplayFor(model => model.District, new { htmlAttributes = new { @class = "form-control" } })
 
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="Area">Area</label>
-            <input type="number" class="form-control" id="Area" value="35">
+            @Html.DisplayFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
         </div>
         <div class="form-group col-md-4">
             <label for="Bed">Bed Room</label>
-            <input type="number" class="form-control" id="Bed" value="20">
+            @Html.DisplayFor(model => model.BedRoom, new { htmlAttributes = new { @class = "form-control" } })
         </div>
         <div class="form-group col-md-4">
             <label for="Bath">Bath Room</label>
-            <input type="number" class="form-control" id="Bath" value="20">
+            @Html.DisplayFor(model => model.BathRoom, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="Price">Price</label>
-            <input type="number" class="form-control" id="Price" value="900000000">
+            @Html.DisplayFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
         </div>
         <div class="form-group col-md-4">
             <label for="Rate">Installment Rate</label>
-            <input type="number" class="form-control" id="Rate" value="7.99">
+            @Html.DisplayFor(model => model.InstallmentRate, new { htmlAttributes = new { @class = "form-control" } })
         </div>
         <div class="form-group col-md-4">
             <label for="inputEmail4">Status</label>
-            <input type="text" class="form-control" id="inputStatus" value="Không hiển thị">
+            @Html.DisplayFor(model => model.PropertyStatusID, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
     <div class="form-group">
         <div class="col_01 col_len">
             <label for="Description">Mô tả</label>
-            <textarea required rows="2" cols="5" id="Description" name="mota" form="add_product" autocomplete="off" class="form-control">Phòng rất khang trang và sạch sẽ</textarea>
+            @Html.DisplayFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
     <div class="form-group">
@@ -67,7 +67,7 @@
             <label class="text_label_01 mt_01">Avatar Property</label>
 
             <div class="image_aria " id="image_aria">
-                <img width="700" src="~/Images/ppc0001.jpg" alt="image" style="padding: 20px 0;">
+                <img src="@Url.Content(Model.Avatar)" alt="Image" style="height:250px;width:200px;" />
 
             </div>
         </div>
