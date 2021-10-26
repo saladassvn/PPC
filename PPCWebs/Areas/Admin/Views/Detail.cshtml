@@ -1,7 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Detail Property";
+    ViewBag.Title = "    Property";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+@model PPCWebs.Models.Property
+
 
 <form style="padding: 0 200px; padding-bottom: 100px;">
     <h2 style="padding-bottom: 20px;">Detail Property</h2>
@@ -47,7 +49,7 @@
         </div>
         <div class="form-group col-md-4">
             <label for="Rate">Installment Rate</label>
-            <input type="number" class="form-control" id="Rate"value="7.99">
+            <input type="number" class="form-control" id="Rate" value="7.99">
         </div>
         <div class="form-group col-md-4">
             <label for="inputEmail4">Status</label>
@@ -57,7 +59,7 @@
     <div class="form-group">
         <div class="col_01 col_len">
             <label for="Description">Mô tả</label>
-            <textarea required rows="2" cols="5" id="Description" name="mota" form="add_product" autocomplete="off" class="form-control" >Phòng rất khang trang và sạch sẽ</textarea>
+            <textarea required rows="2" cols="5" id="Description" name="mota" form="add_product" autocomplete="off" class="form-control">Phòng rất khang trang và sạch sẽ</textarea>
         </div>
     </div>
     <div class="form-group">
@@ -72,7 +74,7 @@
         <button type="Update" class="btn btn-primary">Update</button>
 
     </div>
-    
+
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

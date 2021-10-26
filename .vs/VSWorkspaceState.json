@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PPCWebs",
+    "\\PPCWebs\\Areas",
+    "\\PPCWebs\\Areas\\Admin",
+    "\\PPCWebs\\Areas\\Admin\\Views",
+    "\\PPCWebs\\Areas\\Admin\\Views\\Properties"
   ],
+  "SelectedNode": "\\PPCWebs\\Areas\\Admin\\Views\\Properties\\Details.cshtml",
   "PreviewInSolutionExplorer": false
 }
