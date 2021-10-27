@@ -143,24 +143,25 @@ namespace PPCWebs.Areas.Admin.Controllers
                         {
                             System.IO.File.Delete(fullPath);
                         }
-                        model.PropertyCode = property.PropertyCode;
-                        model.PropertyName = property.PropertyName;
-                        model.PropertyTypeID = property.PropertyTypeID;
-                        model.Description = property.Description;
-                        model.DistrictID = property.DistrictID;
-                        model.Address = property.Address;
-                        model.Area = property.Area;
-                        model.BedRoom = property.BedRoom;
-                        model.BathRoom = property.BathRoom;
-                        model.Price = property.Price;
-                        model.InstallmentRate = property.InstallmentRate;
-                        model.PropertyStatusID = property.PropertyStatusID;
-                        db.SaveChanges();
+
                     
                 }
-                    //db.Entry(property).State = EntityState.Modified;
-                   
-                    return RedirectToAction("Index");
+                model.PropertyCode = property.PropertyCode;
+                model.PropertyName = property.PropertyName;
+                model.PropertyTypeID = property.PropertyTypeID;
+                model.Description = property.Description;
+                model.DistrictID = property.DistrictID;
+                model.Address = property.Address;
+                model.Area = property.Area;
+                model.BedRoom = property.BedRoom;
+                model.BathRoom = property.BathRoom;
+                model.Price = property.Price;
+                model.InstallmentRate = property.InstallmentRate;
+                model.PropertyStatusID = property.PropertyStatusID;
+                db.SaveChanges();
+                //db.Entry(property).State = EntityState.Modified;
+
+                return RedirectToAction("Index");
                 
             }
             ViewBag.DistrictID = new SelectList(db.Districts, "ID", "DistrictName", property.DistrictID);
