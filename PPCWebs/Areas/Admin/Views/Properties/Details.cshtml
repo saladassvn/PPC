@@ -69,8 +69,11 @@
             <label class="text_label_01 mt_01">Avatar Property</label>
 
             <div class="image_aria " id="image_aria">
-                <img src="@Url.Content(Model.Avatar)" alt="Image" style="height:200px;width:200px;" />
-
+                
+                @if (!String.IsNullOrEmpty(Model.Avatar))
+                {
+                    <img src="@Url.Content(Model.Avatar)" alt="Image" style="height:200px;width:200px;" />
+                }
             </div>
         </div>
         <p></p>

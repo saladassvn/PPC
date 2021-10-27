@@ -83,7 +83,12 @@
             @Html.DisplayFor(modelItem => item.InstallmentRate)
         </td>
         <td>
-            <img src="@Url.Content(item.Avatar)" alt="Image" style="height:100px;width:100px;" />
+
+            @if (!String.IsNullOrEmpty(item.Avatar))
+            {
+                <img src="@Url.Content(item.Avatar)" alt="Image" style="height:100px;width:100px;" />
+            }
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.District.DistrictName)

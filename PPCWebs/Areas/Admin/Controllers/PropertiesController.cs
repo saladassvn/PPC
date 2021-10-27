@@ -18,14 +18,12 @@ namespace PPCWebs.Areas.Admin.Controllers
     {
         private AD25Team21Entities db = new AD25Team21Entities();
 
-        // GET: Admin/Properties
         public ActionResult Index()
         {
             var properties = db.Properties.Include(p => p.District).Include(p => p.PropertyStatu).Include(p => p.PropertyType);
             return View(properties.OrderByDescending(x => x.ID).ToList());
         }
 
-        // GET: Admin/Properties/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -40,7 +38,6 @@ namespace PPCWebs.Areas.Admin.Controllers
             return View(property);
         }
 
-        // GET: Admin/Properties/Create
         public ActionResult Create()
         {
             ViewBag.DistrictID = new SelectList(db.Districts, "ID", "DistrictName");
@@ -49,9 +46,7 @@ namespace PPCWebs.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/Properties/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,PropertyCode,PropertyName,PropertyTypeID,Description,DistrictID,Address,Area,BedRoom,BathRoom,Price,InstallmentRate,Avatar,Album,PropertyStatusID")] Property property, HttpPostedFileBase img)
@@ -61,12 +56,35 @@ namespace PPCWebs.Areas.Admin.Controllers
             {
                 try
                 {
+                    string filePath = "";
                     if (img != null)
                     {
                         string fileName = System.IO.Path.GetFileName(img.FileName);
-                        string filePath = "~/Images/" + fileName;
+                        filePath = "~/Images/" + fileName;
                         Console.WriteLine(filePath);
                         img.SaveAs(Server.MapPath(filePath));
+                        db.Properties.Add(new Property
+                        {
+                            PropertyCode = property.PropertyCode,
+                            PropertyName = property.PropertyName,
+                            PropertyTypeID = property.PropertyTypeID,
+                            Description = property.Description,
+                            DistrictID = property.DistrictID,
+                            Address = property.Address,
+                            Area = property.Area,
+                            BedRoom = property.BedRoom,
+                            BathRoom = property.BathRoom,
+                            Price = property.Price,
+                            InstallmentRate = property.InstallmentRate,
+                            PropertyStatusID = property.PropertyStatusID,
+                            Avatar = filePath
+                        });
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+
+                    }
+                    else
+                    {
                         db.Properties.Add(new Property
                         {
                             PropertyCode = property.PropertyCode,
