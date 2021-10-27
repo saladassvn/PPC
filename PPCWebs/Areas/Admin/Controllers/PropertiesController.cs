@@ -82,7 +82,7 @@ namespace PPCWebs.Areas.Admin.Controllers
                             InstallmentRate = property.InstallmentRate,
                             PropertyStatusID = property.PropertyStatusID,
                             Avatar = filePath
-                        }) ;
+                        });
                         db.SaveChanges();
                         return RedirectToAction("Index");
 
@@ -104,7 +104,7 @@ namespace PPCWebs.Areas.Admin.Controllers
         // GET: Admin/Properties/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -124,20 +124,50 @@ namespace PPCWebs.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,PropertyCode,PropertyName,PropertyTypeID,Description,DistrictID,Address,Area,BedRoom,BathRoom,Price,InstallmentRate,Avatar,Album,PropertyStatusID")] Property property)
+        public ActionResult Edit([Bind(Include = "ID,PropertyCode,PropertyName,PropertyTypeID,Description,DistrictID,Address,Area,BedRoom,BathRoom,Price,InstallmentRate,Avatar,Album,PropertyStatusID")] Property property, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(property).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                    var model = db.Properties.Find(property.ID);
+                    string oldfilePath = model.Avatar;
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(file.FileName);
+                        string path = System.IO.Path.Combine(
+                        Server.MapPath("~/Images/"), fileName);
+                        file.SaveAs(path);
+                        model.Avatar = "~/Images/" + file.FileName;
+                        string fullPath = Request.MapPath(oldfilePath);
+
+                    if (System.IO.File.Exists(fullPath))
+                        {
+                            System.IO.File.Delete(fullPath);
+                        }
+                        model.PropertyCode = property.PropertyCode;
+                        model.PropertyName = property.PropertyName;
+                        model.PropertyTypeID = property.PropertyTypeID;
+                        model.Description = property.Description;
+                        model.DistrictID = property.DistrictID;
+                        model.Address = property.Address;
+                        model.Area = property.Area;
+                        model.BedRoom = property.BedRoom;
+                        model.BathRoom = property.BathRoom;
+                        model.Price = property.Price;
+                        model.InstallmentRate = property.InstallmentRate;
+                        model.PropertyStatusID = property.PropertyStatusID;
+                        db.SaveChanges();
+                    
+                }
+                    //db.Entry(property).State = EntityState.Modified;
+                   
+                    return RedirectToAction("Index");
+                
             }
             ViewBag.DistrictID = new SelectList(db.Districts, "ID", "DistrictName", property.DistrictID);
             ViewBag.PropertyStatusID = new SelectList(db.PropertyStatus, "ID", "PropertyStatusName", property.PropertyStatusID);
             ViewBag.PropertyTypeID = new SelectList(db.PropertyTypes, "ID", "PropertyTypeName", property.PropertyTypeID);
             return View(property);
         }
-
         // GET: Admin/Properties/Delete/5
         public ActionResult Delete(int? id)
         {

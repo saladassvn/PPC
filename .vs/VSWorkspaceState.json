@@ -4,8 +4,8 @@
     "\\PPCWebs",
     "\\PPCWebs\\Areas",
     "\\PPCWebs\\Areas\\Admin",
-    "\\PPCWebs\\Areas\\Admin\\Views",
-    "\\PPCWebs\\Areas\\Admin\\Views\\Properties"
+    "\\PPCWebs\\Areas\\Admin\\Controllers"
   ],
+  "SelectedNode": "\\PPCWebs\\Areas\\Admin\\Controllers\\PropertiesController.cs",
   "PreviewInSolutionExplorer": false
 }
