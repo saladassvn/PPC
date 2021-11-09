@@ -11,7 +11,7 @@ namespace PPCWebs.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Property
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,21 +21,49 @@ namespace PPCWebs.Models
             this.InstallmentContracts = new HashSet<InstallmentContract>();
             this.PropertyServices = new HashSet<PropertyService>();
         }
-    
+        
         public int ID { get; set; }
         public string PropertyCode { get; set; }
+
+        [Required(ErrorMessage = "Please enter Property Name")]
+
         public string PropertyName { get; set; }
+
+
         public int PropertyTypeID { get; set; }
+
+        [Required(ErrorMessage = "Please enter Description")]
         public string Description { get; set; }
+
+
         public int DistrictID { get; set; }
+
+        [Required(ErrorMessage = "Please enter Address")]
         public string Address { get; set; }
+
+        [Required(ErrorMessage = "Please enter Area")]
+        [Range(1, 200, ErrorMessage = "Please enter between 1 and 200")]
         public Nullable<int> Area { get; set; }
+
+        [Required(ErrorMessage = "Please enter number of bedroom")]
+        [Range(0, 15, ErrorMessage = "Please enter between 0 and 15")]
         public Nullable<int> BedRoom { get; set; }
+
+        [Required(ErrorMessage = "Please enter number of bathroom")]
+        [Range(0, 15, ErrorMessage = "Please enter between 0 and 15")]
         public Nullable<int> BathRoom { get; set; }
+
+        [Required(ErrorMessage = "Please enter property price")]
+        [Range(1, 2147483647, ErrorMessage = "Please enter between 1 and 2147483647")]
         public Nullable<int> Price { get; set; }
+
+        [Required(ErrorMessage = "Please enter installment rate")]
+        [Range(0, 100, ErrorMessage = "Please enter between 0 and 100")]
         public Nullable<double> InstallmentRate { get; set; }
+
         public string Avatar { get; set; }
         public string Album { get; set; }
+
         public Nullable<int> PropertyStatusID { get; set; }
     
         public virtual District District { get; set; }
