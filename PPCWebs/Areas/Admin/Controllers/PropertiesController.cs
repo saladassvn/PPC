@@ -11,9 +11,12 @@ using PPCWebs.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using PPCWebs.Areas.Admin.Middleware;
 
 namespace PPCWebs.Areas.Admin.Controllers
 {
+
+    [LoginVerification]
     public class PropertiesController : Controller
     {
         private AD25Team21Entities db = new AD25Team21Entities();

@@ -144,7 +144,7 @@
                         <img src="~/Images/avatar5.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">CyberBoys</a>
+                        <a href="#" class="d-block">@Session["user-fullname"]</a>
                     </div>
                 </div>
 
@@ -161,23 +161,38 @@
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+
                             <ul class="nav nav-treeview">
+                                @if ((int)Session["user-role"] == 2)
+                                {
+                                    <li class="nav-item">
+                                        <a href="/Admin/PropertyTypeAdmin" class="nav-link active">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Property Type</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/Admin/PropetyAdmin" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Property</p>
+                                        </a>
+                                    </li>
+                                }
+
+                                @if ((int)Session["user-role"] == 1)
+                                {
+                                    <li class="nav-item">
+                                        <a href="/Admin/Account" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Account</p>
+                                        </a>
+                                    </li>
+                                }
+
                                 <li class="nav-item">
-                                    <a href="/Admin/PropertyTypeAdmin" class="nav-link active">
+                                    <a href="/Admin/Auth/Logout" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Property Type</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Admin/PropetyAdmin" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Property</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Admin/Account" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Account</p>
+                                        <p>Logout</p>
                                     </a>
                                 </li>
                             </ul>

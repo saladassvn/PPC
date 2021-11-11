@@ -129,11 +129,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\PropertiesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SearchPropertyController.cs" />
+    <Compile Include="Areas\Admin\Middleware\LoginVerification.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminAccount.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -209,6 +214,11 @@
     <Content Include="Content\jquery.vmap.usa.js" />
     <Content Include="Content\jqvmap.min.css" />
     <Content Include="Content\moment.min.js" />
+    <Content Include="Content\NewFolder1\adminlte.min.css" />
+    <Content Include="Content\NewFolder1\adminlte.min.js" />
+    <Content Include="Content\NewFolder1\all.min.css" />
+    <Content Include="Content\NewFolder1\bootstrap.bundle.min.js" />
+    <Content Include="Content\NewFolder1\jquery.min.js" />
     <Content Include="Content\OverlayScrollbars.min.css" />
     <Content Include="Content\sparkline.js" />
     <Content Include="Content\summernote-bs4.css" />
@@ -223,6 +233,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\avatar5.png" />
+    <Content Include="Images\ppc-background.jpg" />
     <Content Include="Images\ppc0001.jpg" />
     <Content Include="Images\ppc0002.jpg" />
     <Content Include="Images\ppc0003.jpg" />
@@ -276,6 +287,7 @@
     <Content Include="Areas\Admin\Views\Properties\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Properties\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Properties\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
