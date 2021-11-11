@@ -36,5 +36,6 @@ namespace PPCWebs.Models
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<AdminAccount> AdminAccounts { get; set; }
     }
 }
