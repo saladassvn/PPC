@@ -1,0 +1,111 @@
+﻿
+@model PPCWebs.Models.InstallmentContract
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml"; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Print</title>
+    <link href="~/Content/NewFolder2/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="clearfix">
+        <div id="logo">
+            <img src="~/Content/NewFolder2/logo.png" />
+        </div>
+        <div id="company">
+            <h2 class="name">Công ty PPC</h2>
+            <div> 69 Đặng Thùy Trâm, P.13, Bình Thạnh, HCM</div>
+            <div>091-519-0450</div>
+            <div><a href="mailto:company@example.com">ppc@gmail.com</a></div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1 style="text-align:center; color:#57B223">HỢP ĐỒNG MUA BẤT ĐỘNG SẢN</h1>
+            <h2 class="contract"> @Html.DisplayFor(model => model.InstallmentContractCode)</h2>
+            <h4 class="date"> <i> Hôm nay, ngày @Html.DisplayFor(model => model.DateOfContract). Chúng tôi gồm: </i></h4>
+        </div>
+        <div id="details" class="clearfix">
+            <table border="1">
+                <tr>
+                    <td style="border-right:1px solid black">
+                        <div id="client">
+                            <div class="to">BÊN A:</div>
+                            <h2 class="company">Công ty PPC</h2>
+                            <div class="address">69 Đặng Thùy Trâm, P.13, Bình Thạnh, HCM</div>
+                            <div class="mobile">091-519-0450</div>
+                            <div class="tax">000-519-0450</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="invoice">
+                            <div class="to">BÊN B:</div>
+                            <h2 class="customername"> @Html.DisplayFor(model => model.Customer.CustomerName)</h2>
+                            <div class="customeraddress">@Html.DisplayFor(model => model.Customer.CustomerAddress)</div>
+                            <div class="customermobile">@Html.DisplayFor(model => model.Customer.Mobile)</div>
+                            <div class="ssn">@Html.DisplayFor(model => model.Customer.SSN)</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h4>Sau khi bàn bạc, hai bên thống nhất ký kết Hợp đồng với các điều kiện và điều khoản như sau: </h4>
+            <h4>Điều 1: Đối tượng của hợp đồng</h4>
+
+            <div class="paddress">1. Đối tượng của hợp đồng này là ngôi nhà: <b class="property"> @Html.DisplayFor(model => model.Property.PropertyName) (Mã bất động sản: @Html.DisplayFor(model => model.Property.PropertyCode))</b></div>
+            2. Công ty ABC là chủ sở hữu nhà ở và sử dụng đất ở trên.
+
+            <h4>Điều 2. Giá và phương thức thanh toán</h4>
+            <div class="pprice"> 1. Giá mua bán toàn bộ căn nhà nêu trên là:<b class="money"> @Html.DisplayFor(model => model.Property.Price)</b>.</div>
+            <div class="pdeposit">2. Bên B đã đặt cọc cho Bên A số tiền: <b class="money">@Html.DisplayFor(model => model.Price)</b></div>
+            <div class="pprice"> 3. Phương thức thanh toán:<b class="pttt"> @Html.DisplayFor(model => model.InstallmentPaymentMethod)</b>.</div>
+            <div class="pdeposit">4. Hạn trả góp: <b class="money">@Html.DisplayFor(model => model.PaymentPeriod)</b></div>
+            5. Bên B thanh toán số tiền còn lại một lần cho Bên A bằng đồng Việt Nam.
+            <br>
+            6. Bên B giao và Bên A nhận đủ số tiền mua bán căn nhà nêu trên. Việc giao và nhận số tiền nêu trên do hai bên tự thực hiện và chịu trách nhiệm trước pháp luật.
+
+            <h4>Điều 3. Điều khoản cuối cùng</h4>
+
+            <p> 1. Hai bên đã hiểu rõ quyền, nghĩa vụ và lợi ích hợp pháp của mình, ý nghĩa và hậu quả pháp lý của việc công chứng này, sau khi đã được nghe lời giải thích của người có thẩm quyền công chứng hoặc chứng thực dưới đây. </p>
+
+            <p> 2. Hai bên đã tự đọc lại hợp đồng này, đã hiểu và đồng ý tất cả các điều khoản ghi trong hợp đồng này.</p>
+
+            <p> 3. Hợp đồng này được lập thành 02 bản. Bên A giữ 01 bản, Bên B giữ 01 bản</p>
+        </div>
+        <table style="text-align:center;">
+            <tr>
+                <td class="sign">
+                    <h4> BÊN BÁN </h4>
+                    <h3>(Ký và ghi rõ họ và tên)</h3>
+                    <p></p>
+                    <p></p>
+
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </td>
+                <td class="sign">
+                    <h4>BÊN MUA </h4>
+                    <h3>(Ký và ghi rõ họ và tên)</h3>
+                    <p></p>
+                    <p></p>
+
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </td>
+            </tr>
+
+        </table>
+
+
+    </main>
+    <footer>
+        Công ty PPC - Tài sản thực, giá trị thực.
+    </footer>
+</body>
+</html>
