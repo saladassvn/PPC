@@ -1,0 +1,109 @@
+﻿@model IEnumerable<PPCWebs.Models.InstallmentContract>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>List Of Full Contract</h2>
+
+<p>
+    @Html.ActionLink("Add New Contract", "Create")
+</p>
+
+<div class="topnav">
+
+    @using (Html.BeginForm("searchInstallmentContract", "InstallmentContract", FormMethod.Get))
+    {
+        @Html.TextBox("searching", null, new { @placeholder = "Enter Installment Contract Name To Search...", @style = "width: 350px !important; border-radius: 4px; margin-right: 10px;" });
+    }
+</div>
+
+<p>
+
+</p>
+<table class="table" style="width:100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InstallmentContractCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.PropertyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfContract)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstallmentPaymentMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentPeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Taken)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remain)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstallmentContractCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Property.PropertyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfContract)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstallmentPaymentMethod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentPeriod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deposit)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.LoanAmount)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Taken)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Remain)
+                </th>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Print", "Print", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+</table>

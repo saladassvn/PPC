@@ -130,6 +130,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FullContractController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstallmentContractController.cs" />
     <Compile Include="Areas\Admin\Controllers\PropertiesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SearchPropertyController.cs" />
     <Compile Include="Areas\Admin\Middleware\LoginVerification.cs" />
@@ -219,6 +221,8 @@
     <Content Include="Content\NewFolder1\all.min.css" />
     <Content Include="Content\NewFolder1\bootstrap.bundle.min.js" />
     <Content Include="Content\NewFolder1\jquery.min.js" />
+    <Content Include="Content\NewFolder2\logo.png" />
+    <Content Include="Content\NewFolder2\style.css" />
     <Content Include="Content\OverlayScrollbars.min.css" />
     <Content Include="Content\sparkline.js" />
     <Content Include="Content\summernote-bs4.css" />
@@ -288,6 +292,13 @@
     <Content Include="Areas\Admin\Views\Properties\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Properties\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\FullContract\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FullContract\SearchFullContract.cshtml" />
+    <Content Include="Areas\Admin\Views\FullContract\Print.cshtml" />
+    <Content Include="Content\NewFolder2\SourceSansPro-Regular.ttf" />
+    <Content Include="Areas\Admin\Views\InstallmentContract\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentContract\SearchFullContract.cshtml" />
+    <Content Include="Areas\Admin\Views\InstallmentContract\Print.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
